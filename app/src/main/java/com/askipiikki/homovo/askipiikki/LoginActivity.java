@@ -15,21 +15,9 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 
-public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-    }
-}
-
-
-
-
-
-/*
-
+/**
+ * Created by HOMOVO on 2.2.2016.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private static EditText username;
@@ -53,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (username.getText().toString().equals("user") &&
-                        password.getText().toString().equals("pass")){
+                                password.getText().toString().equals("pass")){
                             Toast.makeText(LoginActivity.this,"Username and password is correct",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(v.getContext(), MenuActivity.class);
@@ -69,44 +57,3 @@ public class LoginActivity extends AppCompatActivity {
         );
     }
 }
-
-
-
-
-
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button button_scan;
-    private TextView formatTxt, contentTxt;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        button_scan = (Button)findViewById(R.id.button_scan);
-        formatTxt = (TextView)findViewById(R.id.scan_format);
-        contentTxt = (TextView)findViewById(R.id.scan_content);
-        button_scan.setOnClickListener(this);
-    }
-    public void onClick(View v){
-        if(v.getId()==R.id.button_scan){
-            IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-            scanIntegrator.initiateScan();
-        }
-    }
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (scanningResult != null) {
-            String scanContent = scanningResult.getContents();
-            String scanFormat = scanningResult.getFormatName();
-            formatTxt.setText("FORMAT: " + scanFormat);
-            contentTxt.setText("CONTENT: " + scanContent);
-        }
-        else{
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "No scan data received!", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-    }
-}
-
-
-*/

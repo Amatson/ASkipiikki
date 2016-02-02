@@ -1,4 +1,14 @@
 <resources>
+
     <string name="app_name">ASkipiikki</string>
-    <string name="scan">Scan</string>
+
+    <string name="welcome_text">Welcome</string>
+
+    <string name="button_scan_text">Scan</string>
+
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="button_login_text">Login</string>
+    <string name="button_register_text">Register</string>
+
 </resources>
