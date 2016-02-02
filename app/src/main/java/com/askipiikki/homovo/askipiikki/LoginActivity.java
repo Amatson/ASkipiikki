@@ -17,7 +17,11 @@ import com.google.zxing.integration.android.IntentResult;
 
 /**
  * Created by HOMOVO on 2.2.2016.
+ *
+ * I guess here should read something more than just default mambo jumbo.
+ *
  */
+
 public class LoginActivity extends AppCompatActivity {
 
     private static EditText username;
@@ -27,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         LoginButton();
     }
 
@@ -44,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                                 password.getText().toString().equals("pass")){
                             Toast.makeText(LoginActivity.this,"Username and password is correct",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(v.getContext(), MenuActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                             startActivity(intent);
 
                         }
