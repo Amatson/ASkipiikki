@@ -29,12 +29,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/editText_user"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="138dp" />
+        android:layout_marginTop="138dp"
+        android:text="user" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         android:id="@+id/editText_password"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="Password" />
+        android:text="pass" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,4 +66,12 @@
         android:layout_above="@+id/editText_password"
         android:layout_alignLeft="@+id/editText_password"
         android:layout_alignStart="@+id/editText_password" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_nfc"
+        android:layout_below="@+id/editText_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp" />
 </RelativeLayout>

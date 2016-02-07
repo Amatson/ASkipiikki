@@ -24,15 +24,17 @@ import com.google.zxing.integration.android.IntentResult;
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button_scan;
     private TextView formatTxt, contentTxt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.menu);
         button_scan = (Button)findViewById(R.id.button_scan);
         formatTxt = (TextView)findViewById(R.id.scan_format);
         contentTxt = (TextView)findViewById(R.id.scan_content);
         button_scan.setOnClickListener(this);
     }
+
     public void onClick(View v){
         if(v.getId()==R.id.button_scan){
             IntentIntegrator scanIntegrator = new IntentIntegrator(this);
